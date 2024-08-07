@@ -58,3 +58,13 @@ resource "aws_subnet" "example4" {
   }
 }
 
+resource "aws_subnet" "example5" {
+  vpc_id            = aws_vpc.example.id
+  cidr_block        = "172.16.6.0/24"
+  availability_zone = "us-east-1c"
+
+  tags = {
+    Name = "tf5-example"
+  }
+}
+
