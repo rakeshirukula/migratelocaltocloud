@@ -38,3 +38,23 @@ resource "aws_subnet" "example2" {
   }
 }
 
+resource "aws_subnet" "example3" {
+  vpc_id            = aws_vpc.example.id
+  cidr_block        = "172.16.8.0/24"
+  availability_zone = "us-east-1c"
+
+  tags = {
+    Name = "tf3-example"
+  }
+}
+
+resource "aws_subnet" "example4" {
+  vpc_id            = aws_vpc.example.id
+  cidr_block        = "172.16.7.0/24"
+  availability_zone = "us-east-1c"
+
+  tags = {
+    Name = "tf4-example"
+  }
+}
+
